@@ -83,22 +83,17 @@
 
         .tab-button {
             transition: all 0.2s ease-in-out;
-            border-left: 2px solid transparent;
         }
 
         /* Active Tab Formatting */
         .tab-button.active {
             background-color: #27272A;
-            /* bg-zinc-800 */
             color: #FFFFFF;
-            border-left: 2px solid #6200EA;
         }
 
         .tab-button.active-alert {
             background-color: #27272A;
             color: #FFFFFF;
-            border-left: 2px solid #EA4335;
-            /* Google Red for Alert */
         }
 
         .content-fade {
@@ -190,9 +185,9 @@
 
         <!-- Sidebar Navigation -->
         <aside
-            class="w-full md:w-[30%] md:min-w-[320px] md:max-w-[400px] border-b md:border-b-0 md:border-r border-bordercolor bg-bg flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto relative flex-shrink-0 no-scrollbar">
+            class="w-full md:w-[30%] md:min-w-[320px] md:max-w-[400px] border-b md:border-b-0 md:border-r border-bordercolor bg-bg flex flex-col overflow-hidden relative flex-shrink-0">
             <nav id="tabs-container"
-                class="flex flex-row md:flex-col gap-1.5 z-10 relative px-4 py-3 md:py-6 md:px-4 w-max md:w-full">
+                class="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto no-scrollbar gap-1 z-10 relative px-2 py-2 md:py-6 md:px-4 w-full h-auto md:h-full items-center md:items-stretch">
                 <!-- Tabs injected by JS -->
             </nav>
             <div
@@ -361,19 +356,19 @@
                 if (isActive) activeBtn = btn;
 
                 // Base classes
-                let classes = "tab-button w-auto md:w-full flex-shrink-0 text-left px-4 py-3 md:px-5 md:py-4 rounded-none md:rounded-lg font-medium text-[14px] md:text-[15px] flex items-center justify-center md:justify-between group outline-none focus:outline-none border-b-2 md:border-b-0 md:border-l-2 border-transparent ";
+                let classes = "tab-button !flex w-auto md:w-full flex-shrink-0 text-left px-3 py-2 md:px-5 md:py-4 rounded-md md:rounded-lg font-medium text-[13px] md:text-[15px] items-center justify-center md:justify-between group outline-none focus:outline-none border-b-2 md:border-b-0 md:border-l-2 border-transparent ";
 
                 if (isActive) {
                     if (tab.isAlert) {
-                        classes += "active-alert bg-transparent md:bg-zinc-800 text-white shadow-none md:shadow-sm !border-googlered md:!border-l-googlered md:!border-b-transparent";
+                        classes += "active-alert bg-zinc-800/60 md:bg-zinc-800 text-white shadow-none md:shadow-sm !border-googlered md:!border-l-googlered md:!border-b-transparent";
                     } else {
-                        classes += "active bg-transparent md:bg-zinc-800 text-white shadow-none md:shadow-sm !border-goofre md:!border-l-goofre md:!border-b-transparent";
+                        classes += "active bg-zinc-800/60 md:bg-zinc-800 text-white shadow-none md:shadow-sm !border-goofre md:!border-l-goofre md:!border-b-transparent";
                     }
                 } else {
                     if (tab.isAlert) {
-                        classes += "text-googlered/80 hover:bg-transparent md:hover:bg-zinc-800/40 hover:text-googlered";
+                        classes += "text-googlered/60 hover:bg-zinc-800/30 hover:text-googlered";
                     } else {
-                        classes += "text-muted hover:bg-transparent md:hover:bg-zinc-800/40 hover:text-bodytext";
+                        classes += "text-muted hover:bg-zinc-800/30 hover:text-bodytext";
                     }
                 }
 
